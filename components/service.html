@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhaba Services</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(/img/egg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.service-container {
+    text-align: center;
+}
+
+.service-button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #ff9800;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.service-button:hover {
+    background-color: #e68900;
+}
+
+.service-popup {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.section1{
+    backdrop-filter: blur(10px);
+    padding: 50px;
+}
+</style>
+<body>
+    <div class="service-container">
+        <div class="section1">
+            <button class="service-button" onclick="toggleService('food')">Food Service</button>
+            <button class="service-button" onclick="toggleService('delivery')">Delivery Service</button>
+            <button class="service-button" onclick="toggleService('catering')">Catering Service</button>
+        </div>
+            
+        <div id="food" class="service-popup">
+            <h2>Food Service</h2>
+            <p>Enjoy a variety of traditional and delicious dishes prepared with fresh ingredients.</p>
+        </div>
+        
+        <div id="delivery" class="service-popup">
+            <h2>Delivery Service</h2>
+            <p>Get your favorite meals delivered to your doorstep quickly and safely.</p>
+        </div>
+        
+        <div id="catering" class="service-popup">
+            <h2>Catering Service</h2>
+            <p>We offer catering services for all types of events, ensuring a memorable dining experience.</p>
+        </div>
+    </div>
+    <script>function toggleService(serviceId) {
+        const servicePopups = document.querySelectorAll('.service-popup');
+        servicePopups.forEach(popup => {
+            if (popup.id === serviceId) {
+                popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+            } else {
+                popup.style.display = 'none';
+            }
+        });
+    }
+    </script>
+</body>
+</html>

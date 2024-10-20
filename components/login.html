@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .background-world{
+            background-image: url("img/chef.jpg");
+        
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+    </style>
+</head>
+<body class="background-world bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full fade-in">
+        <h2 class="text-2xl font-bold mb-6 text-center">Welcome Back!</h2>
+        <form id="login-form">
+            <!-- Email -->
+            <div class="mb-4">
+                <label class="block text-gray-700">Email</label>
+                <input type="email" placeholder="Enter your email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <!-- Password -->
+            <div class="mb-4">
+                <label class="block text-gray-700">Password</label>
+                <input type="password" placeholder="Enter your password" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Login</button>
+        </form>
+
+        <div class="mt-6 text-center">
+            <p class="text-gray-700">Don't have an account? <a href="#" class="text-blue-500 hover:underline">Sign Up</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('a').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('h2').textContent = 'Create an Account';
+            document.querySelector('button').textContent = 'Sign Up';
+            document.querySelector('form').reset();
+        });
+    </script>
+</body>
+</html>

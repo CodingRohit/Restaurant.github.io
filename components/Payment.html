@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+<body >
+    <nav class="p-9 text-4xl text-center">NOTE: This is not a final result </nav>
+    <section class="bg-gray-100 flex items-center justify-center min-h-screen">
+        <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+        <h2 class="text-2xl font-bold mb-6 text-center">Payment Gateway</h2>
+        <div class="flex justify-center space-x-4 mb-6">
+            <input type="radio" id="option1" name="option" class="radio-input " checked> <img src="https://img.icons8.com/?size=100&id=cA6IhNFdjYHc&format=png&color=000000" alt="Banks cards" class="w-8 h-8">
+            <input type="radio" id="option1" name="option" class="radio-input"><img src="https://img.icons8.com/?size=100&id=68067&format=png&color=000000" alt="Paytm" class="w-8 h-8">
+            <input type="radio" id="option1" name="option" class="radio-input"><img src="https://img.icons8.com/?size=100&id=SZ8HYUgmLcNc&format=png&color=000000" alt="Google Pay" class="w-8 h-8">
+        </div>
+        <form id="payment-form">
+            <!-- UPI Payment -->
+            <div class="mb-4">
+                <label class="block text-gray-700">UPI ID</label>
+                <input type="text" placeholder="Enter UPI ID" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <!-- Card Payment -->
+            <div class="mb-4">
+                <label class="block text-gray-700">Card Number</label>
+                <input type="text" placeholder="Enter Card Number" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div class="flex space-x-4 mb-4">
+                <div class="flex-1">
+                    <label class="block text-gray-700">Expiry Date</label>
+                    <input type="text" placeholder="MM/YY" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="flex-1">
+                    <label class="block text-gray-700">CVV</label>
+                    <input type="text" placeholder="CVV" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="button" onclick="processPayment()" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Pay Now</button>
+        </form>
+
+        <!-- Processing View -->
+        <div id="processing-view" class="flex flex-col items-center justify-center mt-6">
+            <div class="spinner"></div>
+            <p class="mt-4 text-gray-700">Processing Payment...</p>
+        </div>
+    </section>
+
+    <script>
+        function processPayment() {
+            document.getElementById('payment-form').classList.add('hidden');
+            document.getElementById('processing-view').classList.remove('hidden');
+
+            // Simulate payment processing delay
+            setTimeout(() => {
+                alert('Payment Successful!');
+                document.getElementById('payment-form').classList.remove('hidden');
+                document.getElementById('processing-view').classList.add('hidden');
+            }, 3000);
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="main.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title> Responsive Restaurant Website </title>
+  <style>
+   
+  </style>
+</head>
+
+<body>
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+    <div class="bg-white text-center p-6 rounded-lg shadow-lg transform transition duration-500 scale-95 w-3/4">
+        <h2 class="text-2xl font-bold mb-4">Welcome to Our Website!</h2>
+        <!-- <p class="mb-4">We are glad to have you here. Enjoy exploring our content.</p> -->
+        <p class="mb-4 font-bold">This website is under woring and it is a sample of it</p>
+        <button onclick="closeOverlay()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300">Close</button>
+        <div id="timer" class="fixed top-0 right-0 m-4 text-white bg-black bg-opacity-75 p-2 rounded">
+            Closing in <span id="countdown">4</span> seconds...
+        </div>
+    </div>
+</div>
+  <nav class="nav">
+    <div class="nav__header">
+      <div class="nav__logo">
+        <a href="#" class="logo">
+          <img src="assets/logo.png" alt="logo" />
+          <span> DHABA </span>
+        </a>
+      </div>
+      <div class="nav__menu__btn" id="menu-btn">
+        <i class="ri-menu-line"></i>
+      </div>
+    </div>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="#" id="dhaba-link">DHABA</a></li>
+      <li><a href="/components/service.html">SERVICES</a></li>
+      <li><a href="#menu">MENU</a></li>
+      <div class="flex items-center">
+        <div class="nav__btns gap-4">
+          <a class="btn" href="/components/address.html">
+            <span><i class="ri-login-box-line"></i></span>
+            Address
+          </a>
+          <a class="btn" href="/components/login.html">
+            <span><i class="ri-login-box-line"></i></span>
+            Login
+          </a>
+        </div>
+      </div>
+    </ul>
+  </nav>
+
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="close-btn" id="close-popup">&times;</span>
+      <iframe src="/components/dhaba/dhaba.html" width="100%" height="400px" style="border:none;"></iframe>
+    </div>
+  </div>
+
+  <header>
+    <div class="section__container header__container" id="home">
+      <div class="header__image">
+        <img src="assets/header.png" alt="header" />
+      </div>
+      <div class="header__content">
+        <div class="header__tag">
+          More than Faster
+          <img src="assets/delivery-bike.png" alt="header tag" />
+        </div>
+        <h1>Be The Fastest In Delivering Your <span>Food</span></h1>
+        <p class="section__description">
+          Our job is to filling your tummy with delicious food and with fast
+          and free delivery.
+        </p>
+        <div class="header__btns">
+          <button class="btn">Get Started</button>
+          <a href="#">
+            <span><i class="ri-play-fill"></i></span>
+            Watch Video
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section__container service__container" id="service">
+    <p class="section__subheader">WHAT WE SERVE</p>
+    <h2 class="section__header">Your Favourite Food Delivery Partner</h2>
+    <div class="service__grid">
+      <div class="service__card">
+        <img src="assets/service-1.jpg" alt="service" />
+        <h4>Easy To Order</h4>
+        <p>You only need a few steps in ordering food</p>
+      </div>
+      <div class="service__card">
+        <img src="assets/service-2.jpg" alt="service" />
+        <h4>Fastest Delivery</h4>
+        <p>Delivery that is always ontime even faster</p>
+      </div>
+      <div class="service__card">
+        <img src="assets/service-3.jpg" alt="service" />
+        <h4>Best Quality</h4>
+        <p>Not only fast for us quality is also number one</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="flex section__container menu__container" id="menu" style="border: 2px; text-align: center;">
+    <p class="section__subheader">OUR MENU</p>
+    <h2 class="section__header">Menu That Always Make You Fall In Love</h2>
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper" style="gap: 24px;">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <div class="menu__card">
+            <img src="assets/menu-1.jpg" alt="menu" />
+            <div class="menu__card__details">
+              <h4>Italian Pizza</h4>
+              <h5><span>$</span>7.49</h5>
+              <a href="#" class="order-now" data-item="Italian Pizza">
+                Order Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="menu__card">
+            <img src="assets/menu-2.jpg" alt="menu" />
+            <div class="menu__card__details">
+              <h4>Burrito Wrap</h4>
+              <h5><span>$</span>4.49</h5>
+              <a href="#" class="order-now" data-item="Burrito Wrap">
+                Order Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="menu__card">
+            <img src="assets/menu-3.jpg" alt="menu" />
+            <div class="menu__card__details">
+              <h4>Red Sauce Pasta</h4>
+              <h5><span>$</span>5.99</h5>
+              <a href="#" class="order-now" data-item="Red Sauce Pasta">
+                Order Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="menu__card">
+            <img src="assets/menu-4.jpg" alt="menu" />
+            <div class="menu__card__details">
+              <h4>Fresh Pan Pizza</h4>
+              <h5><span>$</span>6.49</h5>
+              <a href="#" class="order-now" data-item="Fresh Pan Pizza">
+                Order Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="menu__card">
+            <img src="assets/menu-5.jpg" alt="menu" />
+            <div class="menu__card__details">
+              <h4>Chicken Nuggets</h4>
+              <h5><span>$</span>4.99</h5>
+              <a href="#" class="order-now" data-item="Chicken Nuggets">
+                Order Now
+                <span><i class="ri-arrow-right-line"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Navigation -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    <!-- Animated and Responsive Button -->
+    <div class="menu__button__container">
+      <a href="/components/menu/menu.html" class="menu__button">
+        View All Items
+      </a>
+    </div>
+  </section>
+  <!-- Include Swiper JS -->
+
+  <!-- Initialize Swiper -->
+
+  <section class="section__container client__container" id="client">
+    <div class="client__image">
+      <img src="assets/client.png" alt="client" />
+    </div>
+    <div class="client__content">
+      <p class="section__subheader">WHAT THEY SAY</p>
+      <h2 class="section__header">What Our Customer Say About Us</h2>
+      <p class="section__description">
+        "Fudo is simply outstanding! The variety and deliciousness of their
+        meals are unparalleled, offering something for every palate. What sets
+        Fudo apart is their exceptional service. The delivery is impressively
+        fast, ensuring your food arrives hot and fresh."
+      </p>
+      <div class="client__details">
+        <img src="assets/user.jpg" alt="client" />
+        <div>
+          <h4>Theresa Jordan</h4>
+          <h5>Food Enthusiast</h5>
+        </div>
+      </div>
+      <div class="client__rating">
+        <span><i class="ri-star-fill"></i></span>
+        <span><i class="ri-star-fill"></i></span>
+        <span><i class="ri-star-fill"></i></span>
+        <span><i class="ri-star-fill"></i></span>
+        <span><i class="ri-star-line"></i></span>
+        <span>4.8</span>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="section__container footer__container">
+      <div class="footer__col">
+        <div class="footer__logo">
+          <a href="#" class="logo">
+            <img src="assets/logo.png" alt="logo" />
+            <span>Fudo</span>
+          </a>
+        </div>
+        <p class="section__description">
+          Our job is to filling youe tummy with delicious food and with fast
+          and free delivery time.
+        </p>
+        <ul class="footer__socials">
+          <li>
+            <a href="#"><i class="ri-instagram-fill"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>About</h4>
+        <ul class="footer__links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Menu</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul class="footer__links">
+          <li><a href="#">Dhaba</a></li>
+          <li><a href="#">Partner With Us</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Support</h4>
+        <ul class="footer__links">
+          <li><a href="#">Account</a></li>
+          <li><a href="#">Support Center</a></li>
+          <li><a href="#">Feedback</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      
+document.getElementById('dhaba-link').addEventListener('click', function (e) {
+  e.preventDefault();
+  document.getElementById('popup').style.display = 'flex';
+});
+
+document.getElementById('close-popup').addEventListener('click', function () {
+  document.getElementById('popup').style.display = 'none';
+});
+
+// Countdown timer
+let countdown = 4;
+const countdownElement = document.getElementById('countdown');
+const countdownInterval = setInterval(() => {
+  countdown--;
+  countdownElement.textContent = countdown;
+  if (countdown === 0) {
+      clearInterval(countdownInterval);
+      closeOverlay();
+  }
+}, 1000);
+    </script>
+    <div class="footer__bar">
+      Copyright © 2024 Web Addicted . All rights reserved.
+    </div>
+  </footer>
+</body>
+
+</html>

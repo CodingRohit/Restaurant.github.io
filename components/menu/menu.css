@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.menu-container {
+    display: flex;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-item {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+.menu-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.menu-item h2 {
+    margin: 10px 0;
+}
+
+.description {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+@media (max-width: 600px) {
+    .menu-item {
+        margin: 10px 0;
+    }
+}
+
+.header{
+    text-align: center;
+    align-items: center;
+    padding: 13px;
+    margin: 0;
+    background-color: #ff6347;
+    background-image: url(/img/scooter.gif);
+    background-repeat: no-repeat;
+}
